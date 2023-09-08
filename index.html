@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div class="mainContainer">
+       
+        <h3>Q.1 Write the code to access element which is having id as "text"</h3>
+        
+        <div id="text">TEXT</div>
+
+        <pre>var first = document.getElementById("text");</pre>
+
+        <h3> Q.2 Write the code to access element which is having tag as "h1"</h3>
+
+        <h1>TAG</h1>
+
+        <pre>var second = document.getElementsByTagName("h1");</pre>
+
+        <h3> Q.3 Write the code to access element which is having class as "box"</h3>
+
+        <div class="box">BOX</div>
+
+        <pre>var third = document.getElementsByClassName("box");</pre>
+
+        <h3> Q.4 Change the heading from "Hello" to "Hello World" using DOM functions"</h3>
+         
+        <div class="heading">Hello</div>
+
+        <pre>var changeheading = document.getElementsByClassName("heading");
+ 
+          changeheading.innerHTML= "Hello World";
+          </pre>
+
+         <h3>Q.5 Create an HTML page having content as Hello world and a button
+            named Replace Text. When user will click on this button page content
+            should be changed to "Welcome to Elevation academy"</h3>
+
+            <h1 id="replace">Hello world</h1>
+            <button id="ReplaceText">Replace text </button>
+
+            <pre>var Change = document.getElementById("replace");
+              var Button = document.getElementById ("ReplaceText");
+              Button.addEventListener('click', (e)=>{
+                  Change.innerHTML = "Welcome to Elevation academy"
+              })</pre>
+
+           <h3>Q.6 Add one style attribute and give text color as red and id
+            attribute and give the id value as "heading" in the above given h1
+            tag using DOM functions"</h3>
+
+            <h1 class="six">Hello </h1>
+
+            <pre>var six = document.getElementById("six");
+              six[0].setAttribute("style", "colore:red");
+              six[0].setAttribute("id", "heading");</pre>
+
+            <h3>Q.7Create three cards on HTML page and arrange them using flex
+                property in row or horizontal direction and also create button at
+                the bottom named "Change Flex direction". When user clicks on this
+                button, the cards arrangement should be changed to vertical
+                direction.</h3>
+
+                <div class="flexbox">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+
+                <button id="changedirection">Change Flex direction</button>
+
+                <pre>var FLEXBOX = document.getElementsByClassName("flexbox");
+                  var CHANGEDIRECTION = document.getElementById ("changedirection")
+                  CHANGEDIRECTION.addEventListener('click', (e)=> {
+                  FLEXBOX.classlist.add("flexcol");
+                  })
+                  </pre>
+
+                 <h3> Q.8 What’s the difference between window vs document?</h3>
+
+                 <table>
+                    <tr>
+                      <th>Window</th>
+                      <th>Document</th>
+                    </tr>
+                    <tr>
+                      <td>It represents a browser window or frame that displays the contents of the webpage.</td>
+                      <td>It represents any HTML document or web page that is loaded in the browser.</td>
+                    </tr>
+                    <tr>
+                      <td>It is the very first object that is loaded in the browser.</td>
+                      <td>It is loaded inside the window.</td>
+                    </tr>
+                    <tr>
+                      <td>Global objects, functions, and variables of JavaScript are members of the window object.</td>
+                      <td>All the tags, elements with attributes in HTML are part of the document.</td>
+                    </tr>
+                    <tr>
+                      <td>syntax: document.propertyname;</td>
+                      <td>syntax: window.propertyname;</td>
+                    </tr>
+                  </table>
+
+                  <h3> Q.9 Write code to implement timer clock using JS -- display HH:MM:SS
+                    -- the time should keep updating every second?</h3>
+                  
+                   <div class="Clock">
+                   <p class="Label">Hour<span id="hourLabel"></span></p>
+                   <p class="Label">Min<span id="minLabel"></span></p>
+                   <p class="Label">Sec<span id="secLabel"></span></p>
+                   <p class="Label"><span id="AMPM"></span></p>
+
+                   </div>
+
+                   <pre>let hourLabel = document.getElementById("hourLabel");
+                    let minLabel = document.getElementById("minLabel");
+                    let secLabel = document.getElementById("secLabel");
+                    let AMPMLabel = document.getElementById("AMPM");
+                    function Clock(){
+                        let newDate = new Date();
+                        let newHour = newDate.getHours();
+                        let newMin = newDate.getMinutes();
+                        let newSec = newDate.getSeconds();
+                        let AMPM = "AM"
+                        
+                        if(newHour > 12){
+                            newHour -= 12;
+                            AMPM = "PM"
+                        }
+                         hourLabel.innerText = newHour;
+                        minLabel.innerText = newMin;
+                        secLabel.innerText = newSec;
+                        AMPMLabel.innerText = AMPM;
+                    }
+                    setInterval(()=>{
+                        Clock();
+                     },1000)
+                    </pre>
+
+                </div>
+   
+
+</body>
+</html>
